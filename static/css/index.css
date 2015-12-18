@@ -1,0 +1,205 @@
+.wrapper {
+	width: 980px;
+}
+
+.show {
+	position: relative;
+	float: left;
+	width: 460px;
+}
+.vertical-center{
+  position: relative;
+  margin-top: 10%;
+}
+
+
+.copywriter-taoke, .copywriter-comment {
+	cursor: default;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+
+.copywriter-comment {
+	position: absolute;
+	top: 105px;
+	left: 233px;
+}
+
+.copywriter-taoke {
+	position: absolute;
+	top: 255px;
+	left: 233px;
+}
+
+.copywriter-title {
+	margin-top: 1px;
+	float: left;
+	font-size: 20px;
+	letter-spacing: 6px;
+}
+
+.copywriter-comment .copywriter-title {
+	color: #006fab;
+}
+
+.copywriter-taoke .copywriter-title {
+	color: #ff5d00;
+}
+
+.copywriter-content {
+	margin-left: 68px;
+	font-size: 16px;
+	color: #222;
+	letter-spacing: 5px;
+	line-height: 32px;
+}
+
+.loginprompt .popup-box {
+	width: auto;
+}
+
+
+
+.loginbox h2 {
+	padding-top: 14px;
+	padding-left: 60px;
+	line-height: 54px;
+	color: #fff;
+	font-size: 18px;
+	letter-spacing: 4px;
+}
+
+.loginbox-form {
+	margin-left: 60px;
+}
+
+.loginbox-form .form-input {
+	margin: 0;
+	margin-bottom: 18px;
+}
+
+.loginbox-form button {
+	margin: 0;
+	margin-bottom: 18px;
+	outline: none;
+}
+
+.loginbox-form input {
+	outline: none;
+}
+
+.loginbox-form .form-input .form-title {
+	margin-right: 19px;
+	width: auto;
+	color: #29c074;
+	font-size: 18px;
+	letter-spacing: 4px;
+	line-height: 38px;
+}
+
+.loginbox-form .form-input input {
+	width: 218px;
+	height: 38px;
+	padding: 10px;
+	font-size: 16px;
+	line-height: 18px;
+	border: 0;
+	background-color: #fff;
+
+	transition: background-color 1s;
+	-moz-transition: background-color 1s;
+	-webkit-transition: background-color 1s;
+	-o-transition: background-color 1s;
+}
+
+.loginbox-form .form-input input.error {
+	color: #fff;
+	background-color: #f17868;
+}
+
+
+
+.loginbox-form .form-input input::-webkit-input-placeholder {
+	color: #989898;
+}
+
+
+
+.loginbox-form .form-input input:focus {
+	color: #fff;
+	background-color: #75daa6;
+}
+
+.loginbox-form .btn-orange {
+	z-index: 100;/*ie8*/
+	margin-left: 110px;
+	padding: 0 1.6em 0 1.9em;
+	background-color: #ff853f;
+	font-size: 16px;
+	line-height: 32px;
+}
+
+.loginbox-else {
+	text-align: right;
+	margin-right: 28px;
+	line-height: 16px;
+}
+
+.loginbox-else a {
+	color: #85ba98;
+	font-size: 12px;
+	text-decoration: underline;
+	letter-spacing: 2px;
+}
+
+.loginbox-else a:hover {
+	color: #48986f;
+}
+
+.loginbox-else-mianze {
+	margin-right: 90px;
+}
+
+.loginbox-seperator {
+	margin-bottom: 13px;
+	margin-left: 16px;
+	margin-right: 28px;
+	border-top: 2px dashed #29c074;
+}
+
+.loginbox-errorinfo {
+	margin-top: 20px;
+	margin-bottom: 8px;
+	margin-left: 65px;
+	height: 16px;
+	line-height: 16px;
+	color: #f17868;
+}
+
+.btn_index {
+	display: block;
+	width: 87px;
+	height: 36px;
+	color: #fff;
+	border-radius: 2px;
+	font-size: 14px;
+	text-align: center;
+	line-height: 34px;
+	box-shadow: 0 0 5px rgba(255,255,255,.50) inset;
+}
+
+.popup-box-content {
+	padding: 0 16px;
+}
+
+.popup-box-content p {
+	margin: 12px 0;
+	color: #888;
+	font-size: 12px;
+	line-height: 14px;
+	letter-spacing: 1px;
+}
+
+.index-guide{
+    margin-top: 5%;
+}

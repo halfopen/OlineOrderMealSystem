@@ -1,0 +1,71 @@
+{%  extends "base.html" %}
+{% block link %}
+<link rel="stylesheet" type="text/css" href="{{ "/static/css/index.css" }}" />
+<link rel="stylesheet" type="text/css" href="{{ "/static/css/about.css" }}" />
+{% endblock %}
+{% block js %}
+<script type="text/javascript" src="{{ "/static/js/index.js" }}"></script>
+{% endblock %}
+
+{% block main %}
+
+<div class="container">
+   <ul class="timeline" style="height: 550px">
+  <li><div class="tldate">开发日记</div></li>
+    <li class="timeline-inverted">
+    <div class="tl-circ"></div>
+    <div class="timeline-panel">
+      <div class="tl-heading">
+        <h4>开始进行开发</h4>
+        <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 2015-12-15</small></p>
+      </div>
+      <div class="tl-body">
+        <p>html前端，django后台</p>
+
+        <p>采用bootstrap jquery等框架</p>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="tl-circ"></div>
+    <div class="timeline-panel">
+      <div class="tl-heading">
+        <h4>完成基本功能</h4>
+        <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 2015-12-17 19:07</small></p>
+      </div>
+      <div class="tl-body">
+        <p>秦贤康</p>
+      </div>
+    </div>
+  </li>
+    <li >
+    <div class="tl-circ"></div>
+    <div class="timeline-panel" style="margin-top: 160px">
+      <div class="tl-heading">
+        <h4>完成基本功能</h4>
+        <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 2015-12-17 19:07</small></p>
+      </div>
+      <div class="tl-body">
+        <p>秦贤康</p>
+      </div>
+    </div>
+  </li>
+  <li class="timeline-inverted" >
+    <div class="tl-circ"></div>
+    <div class="timeline-panel" style="margin-top: 240px">
+      <div class="tl-heading">
+        <h4>开始进行开发</h4>
+        <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 2015-12-15</small></p>
+      </div>
+      <div class="tl-body">
+        <p>html前端，django后台</p>
+
+        <p>采用bootstrap jquery等框架</p>
+      </div>
+    </div>
+  </li>
+  </ul>
+
+</div>
+
+{% endblock %}

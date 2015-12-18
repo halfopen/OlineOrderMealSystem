@@ -1,0 +1,763 @@
+.sidebar {
+	width: 150px;
+	float: left;
+}
+
+.main {
+	margin-left: 176px;
+}
+
+.p-bar {
+	position: relative;
+	margin: -7px;
+}
+
+.p-sidebtn {
+	position: absolute;
+	left: -76px;
+	top: 77px;
+	margin: -7px;
+	width: 97px;
+	height: 62px;
+	background-image: url(/static/img/grid-student.png?date=20150528153344);
+	background-position: -360px 0px;
+}
+
+.p-sidebtn ul {
+	overflow: hidden;
+	margin-left: 7px;
+	margin-top: 6px;
+	width: 75px;
+}
+
+.p-sidebtn li {
+	margin: 3px 0;
+	height: 18px;
+	color: #222;
+	font-size: 12px;
+	text-align: center;
+	line-height: 18px;
+	text-shadow: 1px 1px #fff;
+	cursor: pointer;
+}
+
+.p-sidebtn li:hover {
+	color: #d87f38;
+}
+
+.p-top {
+	height: 153px;
+	background-image: url(/static/img/grid-student.png?date=20150528153344);
+	background-position: -180px 0px;
+}
+
+.p-photo {
+	overflow: hidden;
+}
+
+.p-photo img {
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 11.5px;
+	width: 115px;
+	height: 115px;
+	border: 1px solid #d1d1d1;
+	border-radius: 50%;
+}
+
+.p-body {
+	overflow: hidden;
+	padding: 0 14px;
+	background-image: url(/static/img/grid-student.png?date=20150528153344);
+	background-position: 0 0;
+}
+
+.p-separator {
+	margin: 3px 0;
+	border-top: 1px dashed #d1d1d1;
+}
+
+.p-name {
+	margin-top: 7px;
+	margin-bottom: 3px;
+	text-align: center;
+	text-shadow: 1px 1px #fff;
+}
+
+.p-name h3 {
+	display: inline-block;
+	max-width: 7em;
+	color: #222;
+	font-size: 16px;
+}
+
+.p-info {
+	margin: 8px 0;
+	padding: 0 3px;
+	font-size: 12px;
+	color: #535353;
+}
+
+.p-info li {
+	margin: 5px 0;
+	overflow: hidden;
+}
+
+.p-info-title {
+	display: block;
+	float: left;
+	width: 3.2em;
+	color: #222;
+}
+
+.p-info-title:after {
+	content: ":";
+	float: right;
+	display: inline-block;
+	width: 1em;
+	text-align: center;
+}
+
+.p-info-value {
+	display: block;
+	margin-left: 3.2em;
+}
+
+.p-func {
+	margin: 10px 0;
+}
+
+.p-func li {
+	margin: 5px 0;
+}
+
+.p-func a {
+	display: block;
+	margin-left: 3px;
+	padding-left: 21px;
+	height: 20px;
+	color: #222;
+	font-size: 12px;
+	line-height: 20px;
+	text-shadow: 1px 1px #fff;
+}
+
+.p-func a:hover {
+	color: #d87f38;
+}
+
+.p-func li.active a {
+	color: #fff;
+	text-shadow: -1px -1px #b35000;
+	background-image: url(/static/img/grid-student.png?date=20150528153344);
+	background-position: -180px -180px;
+	cursor: auto;
+}
+
+.p-bottom {
+	height: 15px;
+	background-image: url(/static/img/grid-student.png?date=20150528153344);
+	background-position: -180px -160px;
+}
+
+.sidenav {
+	margin: 15px 0;
+}
+
+.sidenav li {
+	margin: 9px 0;
+}
+
+.sidenav a {
+	overflow: hidden;
+	display: block;
+	position: relative;
+	height: 41px;
+	background-image: url(/static/img/grid-student.png?date=20150528153344);
+}
+
+.sidenav-taoke a {
+	background-position: -460px 0;
+}
+
+.sidenav-taoke a:hover {
+	background-position: -460px -100px;
+}
+
+.sidenav-source a {
+	background-position: -460px -50px;
+}
+
+.sidenav-source a:hover {
+	background-position: -460px -150px;
+}
+
+.sidenav-girl-body {
+	position: absolute;
+	display: block;
+	left: 15px;
+	top: 4px;
+	width: 31px;
+	height: 37px;
+	background-image: url(/static/img/grid-student.png?date=20150528153344);
+	background-position: -360px -120px;
+	animation: body 2.6s;
+	-moz-animation: body 2.6s;
+	-webkit-animation: body 2.6s;
+	-o-animation: body 2.6s;
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+}
+
+.sidenav-girl-hand {
+	position: absolute;
+	display: block;
+	left: 36px;
+	top: 23px;
+	width: 13px;
+	height: 9px;
+	background-image: url(/static/img/grid-student.png?date=20150528153344);
+	background-position: -400px -120px;
+	animation: hand 2.6s;
+	-moz-animation: hand 2.6s;
+	-webkit-animation: hand 2.6s;
+	-o-animation: hand 2.6s;
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+	transform-origin: left bottom;
+	-ms-transform-origin: left bottom;
+	-webkit-transform-origin: left bottom;
+	-moz-transform-origin: left bottom;
+	-o-transform-origin: left bottom;
+}
+
+.credit {
+	position: relative;
+	margin-top: 20px;
+}
+
+.credit-hint {
+	padding: 0 6px;
+	font-size: 11px;
+	color: #999;
+}
+
+.credit-title {
+	border-bottom: 1px solid #fff;
+}
+
+.credit-title h2 {
+	padding-left: 10px;
+	padding-bottom: 3px;
+	color: #222;
+	font-size: 16px;
+	text-shadow: 1px 1px #fff;
+	border-bottom: 1px solid #a1a1a1;
+}
+
+.credit-list > li {
+	padding-left: 10px;
+	padding-right: 3px;
+	color: #535353;
+	font-size: 12px;
+	border-bottom: 1px dashed #d1d1d1;
+}
+
+.credit-list > li:last-child {
+	border: 0;
+}
+
+.credit-domain {
+	padding: 3px 0;
+}
+
+.credit-foldable .credit-domain {
+	cursor: pointer;
+}
+
+.credit-foldable .credit-domainname:after {
+	display: inline-block;
+	content: "";
+	margin-left: 4px;
+	margin-bottom: 2px;
+	width: 9px;
+	height: 5px;
+	background-image: url(/static/img/grid-student.png?date=20150528153344);
+	background-position: -360px -100px;
+}
+
+.credit-value {
+	float: right;
+	color: #d87f38;
+}
+
+.credit-foldable .credit-sublist {
+	display: none;
+}
+
+.credit-foldable.folded .credit-sublist {
+	display: block;
+}
+
+.credit-foldable.folded {
+	background-color: #ecdede;
+}
+
+.credit-foldable .credit-domain {
+	cursor: pointer;
+}
+
+.credit-foldable.folded .credit-domainname {
+	color: #fa9547;
+}
+
+.credit-sublist {
+	margin-bottom: 2px;
+}
+
+.credit-sublist > li {
+	overflow: hidden;
+	color: #8a6655;
+}
+
+.credit-coursevalue {
+	float: right;
+}
+
+.credit-coursename {
+	float: left;
+	display: block;
+	width: 10em;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.credit-nocredit {
+	padding: 3px 10px;
+	color: #535353;
+	font-size: 12px;
+}
+
+.uncomed {
+	margin-bottom: 10px;
+}
+
+.uncomed-copywriting {
+	margin-left: 2.2em;
+	font-size: 12px;
+	color: #767676;
+}
+
+.uncomed-list li {
+	display: inline-block;
+	margin-right: 1.2em;
+	padding: 7px 0;
+}
+
+.uncomed-list li:last-child {
+	margin-right: 0;
+}
+
+.uncomed-list a {
+	color: #006ecc;
+	font-size: 14px;
+}
+
+.coursetable {
+	position: relative;
+	width: 708px;
+	height: 515px;
+}
+
+.ct-week {
+	position: absolute;
+	top: 0;
+	left: 20px;
+}
+
+.ct-time {
+	position: absolute;
+	top: 24px;
+	left: 0;
+}
+
+.freetime {
+	position: absolute;
+	display: table;
+	padding: 0 7px;
+	width: 76px;
+	height: 91px;
+	background-color: #888;
+}
+
+.freetime-wrap {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.courses {
+	position: absolute;
+	left: 20px;
+	top: 24px;
+	color: #fff;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.course {
+	display: table;
+	position: absolute;
+	width: 76px;
+}
+
+.course.betop {
+	z-index: 6;
+}
+
+.course-text {
+	display: table-cell;
+	padding: 2px 7px;
+	vertical-align: middle;
+}
+
+.course-hover {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: inherit;
+	width: 100%;
+	background-color: inherit;
+	cursor: pointer;
+}
+
+.course-hover a {
+	display: table-cell;
+	padding: 2px 7px;
+	height: 100%;
+	width: 100%;
+	background-color: inherit;
+	vertical-align: middle;
+}
+
+.course:hover .course-hover {
+	display: table;
+}
+
+.ct-week li {
+	float: left;
+	margin-right: 26px;
+	height: 16px;
+	width: 76px;
+	color: #fff;
+	font-size: 12px;
+	line-height: 16px;
+	text-align: center;
+	background-color: #767676;
+}
+
+.ct-week li:last-child {
+	margin-right: 0;
+}
+
+.ct-week li.active {
+	background-color: #333;
+}
+
+.ct-time li {
+	margin-bottom: 8px;
+	height: 25px;
+	width: 16px;
+	color: #b7b7b7;
+	font-size: 12px;
+	line-height: 25px;
+	text-align: center;
+}
+
+.ct-time li:last-child {
+	margin-bottom: 0;
+}
+
+.ct-time li.active {
+	color: #d87f38;
+}
+
+.separator {
+	position: absolute;
+	width: 688px;
+}
+
+.separator li {
+	float: left;
+	width: 76px;
+	margin: 12px 0;
+	margin-right: 26px;
+	border-bottom: 1px solid #b7b7b7;
+}
+
+.separator li:last-child {
+	margin-right: 0;
+}
+
+.separator-noon {
+	position: absolute;
+	left: 0;
+	top: 165px;
+}
+
+.separator-dusk {
+	position: absolute;
+	left: 0;
+	top: 363px;
+}
+
+.popup-box-head h3 {
+	font-size: 16px;
+	letter-spacing: 1px;
+}
+
+.selectsex-box {
+	width: 410px;
+}
+
+.sex-radio {
+	float: left;
+	margin: 27px;
+	font-size: 24px;
+	line-height: 52px;
+}
+
+.sex-symbol {
+	font-size: 100px;
+	line-height: 112px;
+}
+
+.sex-radio label {
+	display: block;
+	width: 130px;
+	height: 170px;
+	text-align: center;
+	border: 1px solid #d8d8d8;
+	border-radius: 6px;
+}
+
+.sex-radio input {
+	display: none;
+}
+
+.sex-radio input:checked + label {
+	transition:border linear .2s,box-shadow linear .5s;
+	-moz-transition:border linear .2s,-moz-box-shadow linear .5s;
+	-webkit-transition:border linear .2s,-webkit-box-shadow linear .5s;
+	outline:none;
+	border-color: #aaecfb;
+	box-shadow:0 0 5px #aaecfb, 0 0 5px #aaecfb inset;
+	-moz-box-shadow:0 0 5px #aaecfb, 0 0 5px #aaecfb inset;
+	-webkit-box-shadow:0 0 5px #aaecfb, 0 0 5px #aaecfb inset;
+}
+
+.sex-man {
+	color: #799ce3;
+}
+
+.sex-woman {
+	color: #ef7467;
+}
+
+.sex-warning {
+	margin-bottom: 10px;
+	text-indent: 2em;
+}
+
+.sex-hint, .inputpassword {
+	line-height: 1.42em;
+}
+
+#inputpassword {
+	width: 356px;
+}
+
+#inputpassword p {
+	color: #888;
+	font-size: 12px;
+}
+
+#inputpassword p.hint {
+	margin: 16px 0;
+	padding: 0 20px;
+	text-indent: 2em;
+}
+
+#inputpassword .form-input .form-title {
+	width: 154px;
+	color: #535353;
+	font-size: 14px;
+}
+
+#inputpassword .form-input .form-ctrl {
+	margin-left: 154px;
+}
+
+#inputpassword .form-input input {
+	outline: none;
+	border-color: #9b9b9b;
+	width: 164px;
+	height: 24px;
+	padding: 2px 3px;
+}
+
+#inputpassword .form-hint {
+	color: #a5a5a5;
+	letter-spacing: 2px;
+}
+
+#submit-tiaoguo {
+	margin-right: 14px;
+}
+
+.collections {
+	position: relative;
+}
+
+.collection-count {
+	margin: 10px 0 5px;
+	text-align: right;
+	font-size: 14px;
+	color: #989898;
+	letter-spacing: 1px;
+}
+
+.collection-list {
+	margin: 0 -15px;
+	overflow: hidden;
+}
+
+.collection-list > li {
+	position: relative;
+	float: left;
+	margin: 6px 15px;
+	padding: 10px 0;
+	width: 347px;
+	border-top: 1px solid #aeaeae;
+	border-bottom: 1px solid #aeaeae;
+}
+
+.collection-type {
+	position: absolute;
+	left: 0;
+	top: 10px;
+	padding-left: 6px;
+	padding-right: 5px;
+	width: 96px;
+	font-size: 12px;
+	letter-spacing: 1px;
+	line-height: 20px;
+	text-align: center;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 4px;
+}
+
+.course-type0 {
+	color: #4db850;
+}
+
+.course-type1 {
+	color: #7cafcd;
+}
+
+.course-type2 {
+	color: #b68fa7;
+}
+
+.course-type3 {
+	color: #d77474;
+}
+
+.course-type4 {
+	color: #d5bb44;
+}
+
+.course-type5 {
+	color: #6f82c1;
+}
+
+.course-type6 {
+	color: #e07b45;
+}
+
+.collection-detail {
+	margin-left: 104px;
+}
+
+.collection-detail ul {
+	height: 54px;
+}
+
+.collection-name a {
+	display: block;
+	color: #222;
+	font-size: 16px;
+	line-height: 22px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.collection-name a:hover {
+	color: #ff5d00;
+}
+
+.collection-detail ul {
+	margin-top: 5px;
+	color: #989898;
+	font-size: 12px;
+	line-height: 18px;
+}
+
+.collection-score {
+	display: inline-block;
+	width: 4em;
+}
+
+.collection-score:after {
+	content: "学分";
+}
+
+.collection-del {
+	position: absolute;
+	right: 0;
+	bottom: 10px;
+	color: #f17868;
+	font-size: 14px;
+	letter-spacing: 2px;
+	line-height: 1em;
+	cursor: pointer;
+}
+
+.no-collection-hint {
+	position: absolute;
+	left: -55px;
+	top: -10px;
+}
+
+.icon-collection-del {
+	display: block;
+	float: left;
+	margin-right: 5px;
+	width: 16px;
+	height: 14px;
+	background-image: url(/static/img/grid-student.png?date=20150528153344);
+	background-position: -360px -80px;
+}
+
+.collection-del:hover {
+	color: #fa442c;
+}
+
+.collection-del:hover .icon-collection-del {
+	background-position: -380px -80px;
+}

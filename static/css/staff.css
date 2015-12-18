@@ -1,0 +1,41 @@
+a, a:hover{
+    text-decoration: none;
+    color: #000000;
+}
+
+.meal-list{
+    background-color: gainsboro;
+    padding: 2%;
+    margin-top: 4%;
+    margin-left: 4%;
+    border-radius:10px;
+    padding-bottom: 0%;
+}
+.meal-list .spin img{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin-top: -2%;
+    margin-right: -0%;
+}
+.table-list{
+    background-color: #5cb85c;
+    padding: 1%;
+}
+.table-list:hover{
+    background-color: #b2dba1;
+}
+.table-list-invalid{
+    background-color: #808080;
+    padding: 1%;
+}
+.table-list-selected{
+    background-color: red;
+    padding: 1%;
+}
+.remove-meal{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+

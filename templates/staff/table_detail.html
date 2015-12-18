@@ -1,0 +1,51 @@
+{%  extends "base.html" %}
+{% block link %}
+<link rel="stylesheet" type="text/css" href="{{ "/static/css/staff.css" }}" />
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="{{ "/static/js/staff.js" }}"></script>
+{% endblock %}
+
+{% block main %}
+
+<div class="container">
+    <h1>桌子详情</h1>
+    <div class="row">
+            <div class="col-md-2 text-center meal-list table-list">
+                <a href="table_detail?id={{ table.pk }}" >
+                <div style="text-decoration: none; color: #ffffff">
+                    <div class="text-bold text-left">桌子编号:{{ table.table_no }}</div>
+                    <div class="text-left">&nbsp;</div>
+                    <div class="text-bold text-left">可容纳:{{ table.size }}人</div>
+                    <div class="singel-line">{{ table.info }}</div>
+                </div>
+                </a>
+            </div>
+    </div>
+    <br/>
+
+    <h2>该桌已有订单</h2>
+    <div class="row">
+    {% for r in table.reservation.all %}
+          <div class="col-md-2 text-center meal-list">
+            <div class="remove-meal btn btn-danger btn-xs " pk="{{ r.pk }}" >移除</div>
+            <span class="spin"><img src="../static/img/spin/1.png"></span>
+            <div class="text-bold text-center singel-line text-success">客户名:{{ r.customer.name }}</div>
+            <div class="">&nbsp;</div>
+            <div class="singel-line text-left text-info">订单号:{{ r.pk }}&nbsp</div>
+            <div class="text-left singel-line">联系方式:{{ r.customer.tel }}</div>
+            <div class="text-left singel-line">人数:{{ r.number }}</div>
+            <div class="text-left singel-line">日期:{{ r.year }}/{{ r.month }}/{{ r.day }}-{{ r.time }}:00</div>
+            <div class="row">
+                {% if not r.has_table %}
+                <a href="book_table?id={{ r.pk }}" class=" col-md-12 btn btn-sm btn-orange" style="cursor: pointer; padding-right: 1%;" >分配座位</a>
+                {% else %}
+                <a href="book_table?id={{ r.pk }}" class=" col-md-12 btn btn-sm btn-green" style="cursor: pointer; padding-right: 1%;" >查看详情</a>
+                {% endif %}
+            </div>
+          </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

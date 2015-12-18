@@ -1,0 +1,252 @@
+#wrap {
+	overflow: hidden;
+}
+
+.wrapper {
+	position: relative;
+}
+
+.leftbar {
+	float: left;
+	width: 105px;
+}
+
+.rightbar {
+	margin-left: 160px;
+}
+
+.bar-title {
+	margin-bottom: 40px;
+}
+
+.firstdir > li {
+	overflow: hidden;
+	position: relative;
+	border-top: 1px solid #c6a47b;
+	height: 31px;
+	cursor: pointer;
+
+/*	transition: height 0.3s;
+	-moz-transition: height 0.3s;
+	-webkit-transition: height 0.3s;
+	-o-transition: height 0.3s;*/
+}
+
+.firstdir > li.active {
+	height: auto;
+}
+
+.firstdir > li:last-child {
+	border-bottom: 1px solid #c6a47b;
+}
+
+.firstdir > li > h4 {
+	color: #5a4c40;
+	letter-spacing: 0.1em;
+	font-size: 17px;
+	line-height: 31px;
+
+	transition: color 0.3s;
+	-moz-transition: color 0.3s; /* Firefox 4 */
+	-webkit-transition: color 0.3s; /* Safari 和 Chrome */
+	-o-transition: color 0.3s; /* Opera */
+}
+
+.firstdir > li:hover > h4 {
+	color: #c6a47b;
+}
+
+.firstdir > li.active > h4 {
+	color: #5a4c40;
+}
+
+.firstdir .dir-word {
+	margin-left: 42px;
+}
+
+.firstdir .diricon-24 {
+	margin-right: 0.4em;
+}
+
+.diricon-24 {
+	background-image: url(/static/img/grid-source.png);
+}
+
+.diricon-24 {
+	position: absolute;
+	left: 10px;
+	top: 3px;
+	display: inline-block;
+	width: 24px;
+	height: 24px; 
+}
+
+.diricon-24-star {
+	background-position: 0 0;
+}
+
+.firstdir .active .diricon-24-star {
+	background-position: -40px 0;
+}
+
+.diricon-24-shuli {
+	background-position: 0 -40px;
+}
+
+.firstdir .active .diricon-24-shuli {
+	background-position: -40px -40px;
+}
+
+.diricon-24-siliu {
+	background-position: 0 -80px;
+}
+
+.firstdir .active .diricon-24-siliu {
+	background-position: -40px -80px;
+}
+
+.diricon-24-tingshuo {
+	background-position: 0 -120px;
+}
+
+.firstdir .active .diricon-24-tingshuo {
+	background-position: -40px -120px;
+}
+
+.diricon-24-competition {
+	background-position: 0 -160px;
+}
+
+.firstdir .active .diricon-24-competition {
+	background-position: -40px -160px;
+}
+
+.seconddir {
+	border-top: 1px solid #c6a47b;
+}
+
+.seconddir > li {
+	margin: 2px 0;
+	margin-left: 42px;
+	font-size: 14px;
+
+	transition: color 0.3s;
+	-moz-transition: color 0.3s; /* Firefox 4 */
+	-webkit-transition: color 0.3s; /* Safari 和 Chrome */
+	-o-transition: color 0.3s; /* Opera */
+}
+
+.seconddir > li:hover {
+	color: #e6b79c;
+}
+
+.seconddir > li.active {
+	color: #ff5d00;
+}
+
+.seconddir > li.active:before {
+	content: "•";
+}
+
+.leftnav {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+.leftnav-turntohome {
+	color: #f6935b;
+	font-size: 18px;
+	letter-spacing: 0.1em;
+}
+
+.leftnav-turntohome-icon {
+	display: block;
+	float: left;
+	margin-right: 0.2em;
+	width: 22px;
+	height: 22px;
+	background-image: url(/static/img/grid-source.png);
+	background-position: -80px -80px;
+}
+
+.filelist > li {
+	overflow: hidden;
+	padding: 7px 0;
+	height: 75px;
+	border-top: 1px solid #c6a47b;
+}
+
+.filelist > li:last-child {
+	border-bottom: 1px solid #c6a47b;
+}
+
+.file-icon {
+	width: 60px;
+	height: 60px;
+	margin-left: 10px;
+	float: left;
+}
+
+.file-info {
+	position: relative;
+	margin-left: 80px;
+	margin-right: 97px;
+	height: 100%;
+}
+
+.file-info h4 {
+	margin: 2px 0;
+}
+
+.file-info p {
+	position: absolute;
+	bottom: 5px;
+	font-size: 13px;
+}
+
+.file-size {
+	display: inline-block;
+	width: 80px;
+}
+
+.file-dnum {
+	color: #a59f99;
+}
+
+.filelist .download {
+	float: right;
+	display: block;
+	margin-top: 13px;
+	margin-right: 10px;
+	width: 77px;
+	height: 34px;
+	background-image: url(/static/img/grid-source.png);
+	background-position: -80px 0;
+	cursor: pointer;
+}
+
+.filelist .download:hover {
+	background-position: -80px -40px;
+}
+
+.rightbar {
+	position: relative;
+}
+
+.filelist {
+	min-height: 345px;
+}
+
+.page {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	margin-top: 1em;
+	text-align: right;
+	font-size: 17px;
+}
+
+.sourceshare {
+	margin-bottom: 0.7em;
+}

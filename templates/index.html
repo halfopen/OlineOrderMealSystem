@@ -1,0 +1,51 @@
+{%  extends "base.html" %}
+{% block link %}
+<link rel="stylesheet" type="text/css" href="{{ "/static/css/index.css" }}" />
+{% endblock %}
+{% block js %}
+<script type="text/javascript" src="{{ "/static/js/index.js" }}"></script>
+{% endblock %}
+
+{% block main %}
+
+<div class="container">
+    <h1>欢迎使用订餐系统!</h1>
+
+   <div class="row">
+      <div class="col-md-2 text-center index-guide">
+         <a href="staff/add/"> <img style="width: 33%" src="{{ "static/img/article.png"}}"></a>
+          <div>添加订单</div>
+      </div>
+       <div class="col-md-2 text-center index-guide" style="">
+        <a href="staff/tables"><img style="width: 33%" src="{{ "static/img/hummingbird.png"}}"></a>
+         <div>所有桌子</div>
+      </div>
+       <div class="col-md-2 text-center index-guide" style="">
+        <a href="staff/"><img style="width: 33%" src="{{ "static/img/analytics.png"}}"></a>
+         <div>所有订单</div>
+      </div>
+      <div class="col-md-2 text-center index-guide" >
+        <a href="admin/" target="_blank"> <img style="width: 33%" src="{{ "static/img/browser-window.png"}}"></a>
+          <div>进入后台</div>
+      </div>
+       <div class="col-md-2 text-center index-guide">
+         <a href="author/"><img style="width: 33%" src="{{ "static/img/panda.png"}}"></a>
+          <div>作者</div>
+      </div>
+       <div class="col-md-2 text-center index-guide" style="">
+         <a href="about/"><img style="width: 33%" src="{{ "static/img/chain-link.png"}}"></a>
+          <div>关于</div>
+      </div>
+       <div class="col-md-2 text-center index-guide" style="">
+        <a href="suggestion/"><img style="width: 33%" src="{{ "static/img/rank-up.png"}}"></a>
+         <div>表格导出</div>
+      </div>
+       <div class="col-md-2 text-center index-guide" style="">
+        <a href="suggestion/"><img style="width: 33%" src="{{ "static/img/penguin.png"}}"></a>
+         <div>反馈</div>
+      </div>
+   </div><br>
+
+</div>
+
+{% endblock %}

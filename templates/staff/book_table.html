@@ -1,0 +1,54 @@
+{%  extends "base.html" %}
+{% block link %}
+<link rel="stylesheet" type="text/css" href="{{ "/static/css/staff.css" }}" />
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="{{ "/static/js/staff.js" }}"></script>
+{% endblock %}
+
+{% block main %}
+<div class="container">
+    <div class="row">
+    <div class="col-md-12 text-center meal-list reservation" style="background: #d9edf7" r_id="{{ reservation.pk }}">
+        <span class="spin"><img src="../static/img/spin/1.png"></span>
+        <div class="text-bold text-center singel-line">客户名:{{ reservation.customer.name }}</div>
+        <div class="blanka">&nbsp;</div>
+        <div class="text-left singel-line">联系方式:{{ reservation.customer.tel }}</div>
+        <div class="text-left singel-line reservation_number" number="{{ reservation.number }}">人数:{{ reservation.number }} 已选人数: <span id="total_size">0</span></div>
+        <div class="text-left singel-line">日期:{{ reservation.year }}/{{ reservation.month }}/{{ reservation.day }}-{{ reservation.time }}:00</div>
+        <div class="btn book_table" style="margin-bottom: 1%">分配桌子</div>
+        <br/>
+      </div>
+    </div>
+
+    <div class="h2 text-bold">可用桌子</div>
+
+    <div class="row">
+        {% for t in valid_tables %}
+            <div  class="col-md-2 text-center meal-list table-list" style="cursor: pointer"
+                  pk="{{ t.pk }}" size="{{ t.size }}">
+            <div style="text-decoration: none; color: #ffffff">
+                <div class="text-bold text-left">桌子编号:{{ t.table_no }}</div>
+                <div class="text-left">桌子大小:{{ t.size }}</div>
+                <div class="singel-line">{{ t.info }}</div>
+            </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="h2 text-bold">不可用桌子</div>
+    <div class="row">
+        {% for t in invalid_tables %}
+            <a href="table_detail?id={{ t.pk }}" class="col-md-2 text-center meal-list table-list table-list-invalid">
+            <div style="text-decoration: none; color: #ffffff">
+                <div class="text-bold text-left">桌子编号:{{ t.table_no }}</div>
+                <div class="text-left">桌子大小:{{ t.size }}</div>
+                <div class="singel-line">{{ t.info }}</div>
+            </div>
+            </a>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}
