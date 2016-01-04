@@ -76,4 +76,15 @@ $(document).ready(function(){
 
   /* IE8 hack END */
 
+
+  $(".refresh").on("click", refresh);
+
+
+
+
 });
+
+function refresh(){
+    location.reload() ;
+
+}

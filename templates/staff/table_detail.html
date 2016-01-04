@@ -11,8 +11,8 @@
 
 <div class="container">
     <h1>桌子详情</h1>
-    <div class="row">
-            <div class="col-md-2 text-center meal-list table-list">
+    <div class="row text-center">
+            <div class="col-md-6 text-center meal-list table-list">
                 <a href="table_detail?id={{ table.pk }}" >
                 <div style="text-decoration: none; color: #ffffff">
                     <div class="text-bold text-left">桌子编号:{{ table.table_no }}</div>
@@ -27,8 +27,8 @@
 
     <h2>该桌已有订单</h2>
     <div class="row">
-    {% for r in table.reservation.all %}
-          <div class="col-md-2 text-center meal-list">
+    {% for r in reservations %}
+          <div class="row-content col-lg-2 col-sm-4 col-xs-12 text-center meal-list">
             <div class="remove-meal btn btn-danger btn-xs " pk="{{ r.pk }}" >移除</div>
             <span class="spin"><img src="../static/img/spin/1.png"></span>
             <div class="text-bold text-center singel-line text-success">客户名:{{ r.customer.name }}</div>

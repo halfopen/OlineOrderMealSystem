@@ -10,6 +10,10 @@ a, a:hover{
     margin-left: 4%;
     border-radius:10px;
     padding-bottom: 0%;
+    transition: all 0.5s ease-in;
+}
+.invalid-meal-list{
+    background-color: #ffffff;
 }
 .meal-list .spin img{
     position: absolute;
@@ -21,9 +25,11 @@ a, a:hover{
 .table-list{
     background-color: #5cb85c;
     padding: 1%;
+    transition: all 0.5s ease-in;
 }
 .table-list:hover{
     background-color: #b2dba1;
+    transition: all 0.1s ease-in;
 }
 .table-list-invalid{
     background-color: #808080;
@@ -37,5 +43,9 @@ a, a:hover{
     position: absolute;
     top: 0px;
     left: 0px;
+}
+
+.singel_book{
+    margin-left: 0%;
 }
 

@@ -22,6 +22,7 @@ function booking_table(){
     }else{
         return;
     }
+    $("div.screen-mask").removeClass("none");
     r_id = $(".reservation").attr("r_id");
     tables_id ="0";
     $(".table-list-selected").each(function(index, value){
@@ -37,10 +38,18 @@ function booking_table(){
             success:function(data){
             if(data == "True")
             {
-               window.location.href="http://www.myooms.com:8000/staff/";
+                bootbox.alert("<h1>Ok</h1>", function() {
+                    this.hide();
+                    $(".screen-mask").addClass("none");
+                    window.location.href="http://www.myooms.com:8000/staff/";
+                });
+
             }
             else{
-                alert(data);
+                bootbox.alert("<h1>"+data+"</h1>", function() {
+                    this.hide();
+                    $(".screen-mask").addClass("none");
+                });
             }
             }   ,
             error: function(){
@@ -117,6 +126,7 @@ function remove_booking(){
     //alert("remove");
     r_id = $(this).attr("pk");
     t = $(this).parent(".meal-list");
+    t.fadeOut(1);
     $.ajax({
             type:"POST",
             url:"cancel/",
@@ -126,7 +136,11 @@ function remove_booking(){
             datatype: "json",//"xml", "html", "script", "json", "jsonp", "text".
             success:function(data){
             if(data == "True")
-                t.fadeOut();
+            {
+                bootbox.alert("<h1>移除成功</h1>", function() {
+                    console.log("ok");
+                });
+            }
             else{
                 alert("移除失败");
             }

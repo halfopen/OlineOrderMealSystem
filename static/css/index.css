@@ -202,4 +202,9 @@
 
 .index-guide{
     margin-top: 5%;
+    transition: all 0.5s ease-in;
+}
+.index-guide:hover{
+    background: rgba(50, 102, 215, 0.28);
+    transition: all 0.1s ease-in;
 }

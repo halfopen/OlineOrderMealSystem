@@ -9,7 +9,9 @@
 <script src="{{"/static/js/jquery-2.1.4.min.js"}}"></script>
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="{{ "/static/bootstrap-3.3.5-dist/js/bootstrap.min.js" }}"></script>
+<script src="{{"/static/js/bootbox.js"}}"></script>
 
+<script type="text/javascript" src="{{ "/static/js/jquery-smartMenu.js"  }}"></script>
 <script type="text/javascript" src="{{ "/static/js/common.js"  }}"></script>
 <!--[if lte IE 8]>
 <script type="text/javascript" src="{{ "/static/js/PIE.js" }}"></script>
@@ -17,6 +19,7 @@
 {% block js %} {% endblock %}
 <!-- 新 Bootstrap 核心 CSS 文件 -->
 <link rel="stylesheet" type="text/css" href="{{ "/static/css/style.css"}}" />
+<link rel="stylesheet" type="text/css" href="{{ "/static/css/smartMenu.css"}}" />
 <link rel="stylesheet" href="{{ "/static/bootstrap-3.3.5-dist/css/bootstrap.min.css" }}">
 <!-- 可选的Bootstrap主题文件（一般不用引入） -->
 <link rel="stylesheet" href="{{ "/static/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" }}">
@@ -25,6 +28,68 @@
 <title>{% block title %}订餐系统{% endblock %}</title>
 </head>
 <body>
+<script>
+    var imageMenuData = [
+    [{
+        text: "订单",
+        data: [[{
+            text: "所有订单",
+            func: function() {
+                window.location.href="http://www.myooms.com:8000/staff/";
+            }
+        }, {
+            text: "添加订单",
+            func: function() {
+                window.location.href="http://www.myooms.com:8000/staff/add";
+            }
+        }]]
+    }, {
+        text: "桌子",
+         data: [[{
+            text: "所有桌子",
+            func: function() {
+                window.location.href="http://www.myooms.com:8000/staff/tables";
+            }
+        }, {
+            text: "空闲查询",
+            func: function() {
+                window.location.href="http://www.myooms.com:8000/free_table/";
+            }
+        }]]
+    }, {
+        text: "其它",
+        data: [[{
+            text: "关于",
+            func: function() {
+               window.location.href="http://www.myooms.com:8000/about/";
+            }
+        }, {
+            text: "反馈",
+            func: function() {
+                window.location.href="http://www.myooms.com:8000/suggestion/";
+            }
+        },{
+            text: "作者",
+            func: function() {
+                window.location.href="http://www.myooms.com:8000/author/";
+            }
+        }]]
+    }],
+    [{
+        text: "刷新",
+        func: function() {
+            location.reload() ;
+        }
+    }]
+];
+
+
+  $("body").smartMenu(imageMenuData, {
+    name: "body"
+    });
+</script>
+<div class="screen-mask none"></div>
+
 <nav class="navbar navbar-default" role="navigation">
    <div style="position: relative;float: left;width: 20%;">&nbsp;</div>
    <div class="navbar-header">
@@ -45,22 +110,28 @@
              <a href="http://www.myooms.com:8000/">
              <img src="http://www.myooms.com:8000/static/img/glyphicons_free/glyphicons/png/glyphicons-21-home.png">&nbsp;首页</a>
          </li>
-         <li class="staff-nav"><a href="http://www.myooms.com:8000/staff">
+         <li class="staff-nav"><a href="http://www.myooms.com:8000/staff/add">
             <img src="http://www.myooms.com:8000/static/img/glyphicons_free/glyphicons/png/glyphicons-276-fast-food.png">&nbsp;订餐</a>
          </li>
-         <li><a href="http://www.myooms.com:8000/admin" target="_blank">
+         <li><a href="http://www.myooms.com:8000/admin" >
             <img src="http://www.myooms.com:8000/static/img/glyphicons_free/glyphicons/png/glyphicons-43-pie-chart.png">&nbsp;后台</a>
          </li>
+          <li>
+              <a class="refresh"><img src="http://www.myooms.com:8000/static/img/glyphicons_free/glyphicons/png/glyphicons-82-refresh.png" />&nbsp;刷新</a>
+          </li>
          <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-               其它 <b class="caret"></b>
+               <img src="http://www.myooms.com:8000/static/img/glyphicons_free/glyphicons/png/glyphicons-65-lightbulb.png">&nbsp;其它 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-               <li><a href="http://www.myooms.com:8000/about">关于</a></li>
+               <li><a href="http://www.myooms.com:8000/about">
+                   <img src="http://www.myooms.com:8000/static/img/glyphicons_free/glyphicons/png/glyphicons-51-link.png">&nbsp;关于</a></li>
                <li class="divider"></li>
-               <li><a href="http://www.myooms.com:8000/suggestion">反馈</a></li>
+               <li><a href="http://www.myooms.com:8000/suggestion">
+                   <img src="http://www.myooms.com:8000/static/img/glyphicons_free/glyphicons/png/glyphicons-31-pencil.png">&nbsp;反馈</a></li>
                <li class="divider"></li>
-               <li><a href="http://www.myooms.com:8000/author">作者</a></li>
+               <li><a href="http://www.myooms.com:8000/author">
+                   <img src="http://www.myooms.com:8000/static/img/glyphicons_free/glyphicons/png/glyphicons-4-user.png">&nbsp;作者</a></li>
             </ul>
          </li>
       </ul>
@@ -74,13 +145,17 @@
 {% block superjs %} {% endblock %}
 
 
-<nav class="navbar-default navbar-fixed-bottom class" style="background: #d0d0d0">
+
+<nav class="navbar-default navbar-fixed-bottom class navbar-collapse" >
 {% block footer %}
     <div class="text-center text-danger bg-info">
         {{ info }}
     </div>
-    <p class="text-center">&nbsp;&nbsp;大型应用软件设计 copyright@2015&nbsp;halfopen</p>
+    <div class="container">
+        <p class="text-center">&nbsp;&nbsp;大型应用软件设计 copyright@2015&nbsp;halfopen</p>
+    </div>
 {% endblock %}
 </nav>
+
 </body>
 </html>

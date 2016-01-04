@@ -2,12 +2,12 @@
 # Django settings for OOMS project.
 import os
 DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+TEMPLATE_DEBUG = True
 
 ROOT_PATH = '/home/halfopen/code/OOMS/'
 
 ADMINS = (
-     ('订餐系统', 'http://www.myooms.com'),
+     ('订餐系统', 'http://www.myooms.com:8000'),
 )
 
 MANAGERS = ADMINS
@@ -36,7 +36,7 @@ TIME_ZONE = 'America/Chicago'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh_CN'
 
 SITE_ID = 1
 
@@ -77,7 +77,7 @@ STATICFILES_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(ROOT_PATH, "static"),
 )
-
+ADMIN_MEDIA_PREFIX = STATIC_URL + "grappelli/"
 # List of finder classes that know how to find static files in
 # various locations.
 STATICFILES_FINDERS = (
@@ -125,8 +125,8 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
-    #'django.contrib.admindocs',
-    'home', #
+    'django.contrib.admindocs',
+    'home',  #
     'south',
     'suggestion',
     'staff',

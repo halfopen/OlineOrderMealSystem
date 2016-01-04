@@ -9,12 +9,14 @@
 {% block main %}
 <div class="container">
 
+
+<div class="h1">所有订单</div>
 <a href="add" class="btn btn-green">添加新订单</a><br />
-<div class="h2">所有订单</div>
 
 <div class="row">
 {% for r in reservations %}
-      <div class="col-md-2 text-center meal-list">
+    {% if r.is_valid %}
+      <div class="row-content col-lg-2 col-sm-4 col-xs-12 text-center meal-list">
         <div class="remove-meal btn btn-danger btn-xs " pk="{{ r.pk }}" >移除</div>
         <span class="spin"><img src="../static/img/spin/1.png"></span>
         <div class="text-bold text-center singel-line text-success">客户名:{{ r.customer.name }}</div>
@@ -31,8 +33,24 @@
             {% endif %}
         </div>
       </div>
+    {% else %}
+        <div class="row-content col-lg-2 col-sm-4 col-xs-12 text-center meal-list invalid-meal-list">
+        <div class="remove-meal btn btn-danger btn-xs " pk="{{ r.pk }}" >移除</div>
+        <span class="spin"><img src="../static/img/spin/1.png"></span>
+        <div class="text-bold text-center singel-line text-success">客户名:{{ r.customer.name }}</div>
+        <div class="">&nbsp;</div>
+        <div class="singel-line text-left text-info">订单号:{{ r.pk }}&nbsp</div>
+        <div class="text-left singel-line">联系方式:{{ r.customer.tel }}</div>
+        <div class="text-left singel-line">人数:{{ r.number }}</div>
+        <div class="text-left singel-line">日期:{{ r.year }}/{{ r.month }}/{{ r.day }}-{{ r.time }}:00</div>
+        <div class="row">
+            <a href="book_table?id={{ r.pk }}" class=" col-md-12 btn btn-sm btn-comment" style="cursor: pointer; padding-right: 1%;" >过期订单</a>
+        </div>
+      </div>
+    {% endif %}
 {% endfor %}
 </div>
+
 </div>
 
 <div class="clear"></div>

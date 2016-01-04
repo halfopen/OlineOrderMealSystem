@@ -1,0 +1,15 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+
+{% block title %}{{ title }} | {% trans '订餐系统' %}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">{% trans '订餐系统' %}
+    <img style="height: 38px" src="{{ "/static/img/logo.png" }}">
+    <a href="http://www.myooms.com:8000/">
+    <img src="http://www.myooms.com:8000/static/img/glyphicons_free/glyphicons/png/glyphicons-21-home.png">&nbsp;首页
+    </a>
+</h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

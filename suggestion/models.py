@@ -2,7 +2,7 @@
 from django.db import models
 
 class Suggestion(models.Model):
-    like_or_dislike = models.IntegerField(verbose_name=u"喜欢与否", default=0)
+    like_or_dislike = models.CharField(verbose_name=u"喜欢与否", default=u"on", max_length=5)
     suggestion = models.TextField(verbose_name=u"建议", max_length=2000)
     published = models.DateTimeField(verbose_name=u"提交时间", auto_now_add=True)
     name = models.CharField(verbose_name=u"提交用户", max_length=200, null=True, blank=True)

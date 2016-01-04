@@ -4,7 +4,9 @@ html
   color: #5a4c40;
   font-family: "Microsoft Yahei", "微软雅黑", "STHeiti", "黑体", "WenQuanYi Micro Hei";
 }
-
+body{
+    background: url("../img/background.png") repeat;
+}
 #wrap
 {
   padding-top: 26px;
@@ -442,6 +444,10 @@ a.loginlink {
   width: 290px;
 }
 
+.none{
+    display: none;
+}
+
 .userreply-success p {
   margin-top: 10px;
 }
@@ -450,4 +456,15 @@ a.loginlink {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+}
+.screen-mask{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(50, 59, 77, 0.31);
+    z-index: 100;
+}
+
+.refresh{
+    cursor: pointer;
 }

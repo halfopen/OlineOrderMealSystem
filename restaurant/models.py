@@ -6,7 +6,7 @@ from django.db import models
 # 客户
 class Customer(models.Model):
     name = models.CharField(verbose_name=u'姓名', max_length=200, null=False)
-    tel = models.IntegerField(verbose_name=u'电话', max_length=15, null=False, unique=True)
+    tel = models.IntegerField(verbose_name=u'电话', max_length=15, null=False)
 
     class Meta:
         verbose_name = u"客户"
@@ -21,15 +21,15 @@ class Customer(models.Model):
 class Reservation(models.Model):
     customer = models.ForeignKey(Customer, verbose_name=u"订餐用户", null=False)
     number = models.IntegerField(verbose_name=u'人数', max_length=2, null=False)
-    year = models.IntegerField(verbose_name="年", max_length=6, default=2015)
+    year = models.IntegerField(verbose_name=u"年", max_length=6, default=2015)
     month = models.IntegerField(verbose_name=u"月", default=1, null=False, blank=False, max_length=6,
         choices=( (1,u"1月"), (2, u"2月"), (3, u"3月"),
         (4, u"4月"), (5, u"5月"), (6, u"6月"), (7, u"7月"), (8, u"8月"), (9, u"9月"), (10,u"10月"), (11, u"11月"), (12, u"12月")))
     day = models.IntegerField(max_length=2, default=1, null=False, blank=False, choices=((1,u"1号"), (2,u"2号"),(1, "1号")
-        ,(2, "2号"),(3, "3号"),(4, "4号"),(5, "5号"),(6, "6号"),(7, "7号"),(8, "8号"),(9, "9号"),(10, "10号")
-        ,(11, "11号"),(12, "12号"),(13, "13号"),(14, "14号"),(15 ,"15号"),(16, "16号"),(17, "17号"),(18, "18号")
-        ,(19, "19号"),(20, "20号"),(21, "21号"),(22, "22号"),(23, "23号"),(24, "24号"),(25, "25号"),(26, "26号")
-        ,(27, "27号"),(28, "28号"),(29, "29号"),(30, "30号"),(31, "31号")))
+        , (2, "2号"), (3, "3号"),(4, "4号"),(5, "5号"),(6, "6号"),(7, "7号"),(8, "8号"),(9, "9号"),(10, "10号")
+        , (11, "11号"), (12, "12号"),(13, "13号"),(14, "14号"),(15 ,"15号"),(16, "16号"),(17, "17号"),(18, "18号")
+        , (19, "19号"), (20, "20号"),(21, "21号"),(22, "22号"),(23, "23号"),(24, "24号"),(25, "25号"),(26, "26号")
+        , (27, "27号"), (28, "28号"),(29, "29号"),(30, "30号"),(31, "31号")))
     time = models.IntegerField(verbose_name=u"时间段", default="moon", null=False, blank=False,
         choices=((9, u"早上"), (12, u"上午"), (15, u"下午"), (18, u"晚上")), max_length = 10)
     is_valid = models.BooleanField(verbose_name=u"是否有效", default=True, blank=False, null=False)
@@ -38,7 +38,7 @@ class Reservation(models.Model):
     class Meta:
         verbose_name = u"订单"
         verbose_name_plural = u"订单"
-        #ordering = ['-pk']
+        ordering = ['-is_valid']
 
     def __unicode__(self):
         # date = str(self.year)+u" - "+str(self.month)+str(self.day)+str(self.time)

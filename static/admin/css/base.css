@@ -782,13 +782,14 @@ table#change-history tbody th {
 /* HEADER */
 
 #header {
-    background: #417690;
-    color: #ffc;
+    background: #f4f4f4;
+    color: #777;
     overflow: hidden;
+        border-color: #e7e7e7;
 }
 
 #header a:link, #header a:visited {
-    color: white;
+    /*color: white;*/
 }
 
 #header a:hover {
@@ -800,7 +801,7 @@ table#change-history tbody th {
     font-size: 18px;
     margin: 8px 0;
     font-weight: normal;
-    color: #f4f379;
+   /* color: #f4f379;*/
 }
 
 #branding h2 {
@@ -836,4 +837,9 @@ table#change-history tbody th {
     background: #eee url(../img/nav-bg.gif) bottom left repeat-x;
     color: #666;
 }
+ a{
+    line-height: 20px;
+    text-decoration: none;
+}
+
 
