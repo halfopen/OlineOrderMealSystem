@@ -25,6 +25,14 @@ def suggestion(request):
         new_suggestion.suggestion = user_suggestion
         new_suggestion.qq = qq
         new_suggestion.save()
+        
+        subject,form_email,to = u'餐厅系统反馈', 'qinxiankang@gmail.com', '528397553@qq.com'
+        text_content = 'This is an important message'
+        html_content = u'姓名:' + number + u'<br />联系方式:'+ qq + u'<br />反馈内容:' + user_suggestion + u' <br />'
+        html_content += u'<b>查看所有反馈</b><a href="http://www.myooms.com:8000/admin">http:www.myooms.com</a>'
+        msg = EmailMultiAlternatives(subject,text_content,form_email,[to])
+        msg.attach_alternative(html_content, 'text/html')
+        
         return render_json("ok")
     except:
         return render_json("NeedArgument")
