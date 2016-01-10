@@ -4,6 +4,7 @@ from models import Suggestion
 from django.http import HttpResponse
 from utils import render_json
 from django.shortcuts import render_to_response
+from django.core.mail import EmailMultiAlternatives
 
 
 def suggestion(request):
