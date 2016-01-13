@@ -10,13 +10,13 @@
 <div class="container">
 
 
-<div class="h1">所有订单</div>
+<div class="h1 class="animated bounceInLeft"">所有订单</div>
 <a href="add" class="btn btn-green">添加新订单</a><br />
 
 <div class="row">
 {% for r in reservations %}
     {% if r.is_valid %}
-      <div class="row-content col-lg-2 col-sm-4 col-xs-12 text-center meal-list">
+      <div class="animated pulse row-content col-lg-2 col-sm-4 col-xs-12 text-center meal-list">
         <div class="remove-meal btn btn-danger btn-xs " pk="{{ r.pk }}" >移除</div>
         <span class="spin"><img src="../static/img/spin/1.png"></span>
         <div class="text-bold text-center singel-line text-success">客户名:{{ r.customer.name }}</div>
@@ -34,7 +34,7 @@
         </div>
       </div>
     {% else %}
-        <div class="row-content col-lg-2 col-sm-4 col-xs-12 text-center meal-list invalid-meal-list">
+        <div class="animated pulse row-content col-lg-2 col-sm-4 col-xs-12 text-center meal-list invalid-meal-list">
         <div class="remove-meal btn btn-danger btn-xs " pk="{{ r.pk }}" >移除</div>
         <span class="spin"><img src="../static/img/spin/1.png"></span>
         <div class="text-bold text-center singel-line text-success">客户名:{{ r.customer.name }}</div>

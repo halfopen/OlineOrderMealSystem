@@ -9,6 +9,7 @@
 <script src="{{"/static/js/jquery-2.1.4.min.js"}}"></script>
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="{{ "/static/bootstrap-3.3.5-dist/js/bootstrap.min.js" }}"></script>
+<script src="{{ "/static/bootstrap-3.3.5-dist/js/bootstrap-select.js" }}"></script>
 <script src="{{"/static/js/bootbox.js"}}"></script>
 
 <script type="text/javascript" src="{{ "/static/js/jquery-smartMenu.js"  }}"></script>
@@ -18,6 +19,7 @@
 <![endif]-->
 {% block js %} {% endblock %}
 <!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" type="text/css" href="{{ "/static/css/animate.min.css"}}" />
 <link rel="stylesheet" type="text/css" href="{{ "/static/css/style.css"}}" />
 <link rel="stylesheet" type="text/css" href="{{ "/static/css/smartMenu.css"}}" />
 <link rel="stylesheet" href="{{ "/static/bootstrap-3.3.5-dist/css/bootstrap.min.css" }}">
@@ -88,9 +90,9 @@
     name: "body"
     });
 </script>
-<div class="screen-mask none"></div>
+<div class="screen-mask none"><div class="loading">请稍等</div></div>
 
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default " role="navigation">
    <div style="position: relative;float: left;width: 20%;">&nbsp;</div>
    <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -116,11 +118,11 @@
          <li><a href="http://www.myooms.com:8000/admin" >
             <img src="http://www.myooms.com:8000/static/img/glyphicons_free/glyphicons/png/glyphicons-43-pie-chart.png">&nbsp;后台</a>
          </li>
-          <li>
+          <li style="display: none">
               <a class="refresh"><img src="http://www.myooms.com:8000/static/img/glyphicons_free/glyphicons/png/glyphicons-82-refresh.png" />&nbsp;刷新</a>
           </li>
          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <a  class="dropdown-toggle" data-toggle="dropdown">
                <img src="http://www.myooms.com:8000/static/img/glyphicons_free/glyphicons/png/glyphicons-65-lightbulb.png">&nbsp;其它 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
@@ -148,7 +150,7 @@
 
 <nav class="navbar-default navbar-fixed-bottom class navbar-collapse" >
 {% block footer %}
-    <div class="text-center text-danger bg-info">
+    <div class="text-center text-danger bg-info animated flip">
         {{ info }}
     </div>
     <div class="container">

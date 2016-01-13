@@ -1,8 +1,10 @@
 /**
  * Created by Administrator on 2015/12/17.
+ * staff 相关业务的js
  */
 
 is_submit = false;
+var effects = new Array("fadeInRightBig", "fadeInLeftBig", "fadeInUpBig", "fadeInDownBig", "flip");
 
 $(document).ready(function(){
     $(".staff-nav").addClass("active");
@@ -14,6 +16,16 @@ $(document).ready(function(){
     $(".table-list-selected").click(unselect_table_list);
 
     $(".table_submit").on("click", booking_table);
+
+    // 给meal-list添加动态载入特效
+    $(".meal-list").each(function(index,value){
+        console.log(index);
+        console.log(value);
+        $(this).removeClass("pulse");
+        $(this).addClass(effects[ RandomNum(0,5) ]);
+
+    });
+    
 });
 
 function booking_table(){
@@ -122,11 +134,14 @@ function spin_color(){
   });
 }
 
+// 移除订单
 function remove_booking(){
     //alert("remove");
     r_id = $(this).attr("pk");
     t = $(this).parent(".meal-list");
-    t.fadeOut(1);
+    t.removeClass("pulse");
+    t.addClass("slideOutUp").fadeOut(800);
+    //return;
     $.ajax({
             type:"POST",
             url:"cancel/",

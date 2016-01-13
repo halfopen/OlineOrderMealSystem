@@ -10,10 +10,10 @@
 {% block main %}
 
 <div class="container">
-    <h1>所有桌子列表</h1>
+    <h1 class="animated bounceInLeft">所有桌子列表</h1>
     <div class="row">
         {% for t in tables %}
-            <div class="row-content col-lg-2 col-sm-4 col-xs-12 text-center meal-list table-list">
+            <div class="animated plus row-content col-lg-2 col-sm-4 col-xs-12 text-center meal-list table-list">
                 <a href="table_detail?id={{ t.pk }}" >
                 <div style="text-decoration: none; color: #ffffff">
                     <div class="text-bold text-left">桌子编号:{{ t.table_no }}</div>

@@ -5,7 +5,10 @@
 <link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "admin/css/base.css" %}{% endblock %}" />
 {% block extrastyle %}{% endblock %}
 <link rel="stylesheet" type="text/css" href="{{ "/static/css/style.css"}}" />
+<link rel="stylesheet" type="text/css" href="{{ "/static/css/staff.css" }}" />
 <link rel="stylesheet" href="{{ "/static/bootstrap-3.3.5-dist/css/bootstrap.min.css" }}">
+<link rel="stylesheet" type="text/css" href="{{ "/static/css/animate.min.css"}}" />
+<script src="{{ "/static/bootstrap-3.3.5-dist/js/bootstrap.min.js" }}"></script>
 <!-- 可选的Bootstrap主题文件（一般不用引入） -->
 <link rel="stylesheet" href="{{ "/static/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" }}">
 <!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="{% block stylesheet_ie %}{% static "admin/css/ie.css" %}{% endblock %}" /><![endif]-->
@@ -19,7 +22,7 @@
 <body class="{% if is_popup %}popup {% endif %}{% block bodyclass %}{% endblock %}">
 
 <!-- Container -->
-<div id="container">
+<div class="" id="container">
 
     {% if not is_popup %}
     <!-- Header -->
@@ -48,13 +51,7 @@
         {% block nav-global %}{% endblock %}
     </div>
     <!-- END Header -->
-    {% block breadcrumbs %}
-    <div class="breadcrumbs">
-    <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
-    {% if title %} &rsaquo; {{ title }}{% endif %}
-    </div>
-    {% endblock %}
-    {% endif %}
+
 
     {% block messages %}
         {% if messages %}
@@ -65,21 +62,37 @@
     {% endblock messages %}
 
     <!-- Content -->
-    <div id="content" class="{% block coltype %}colM{% endblock %}">
+    <div class=" container animated bounceInLeft">
+        {% block breadcrumbs %}
+        <div class="breadcrumbs">
+        <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+        {% if title %} &rsaquo; {{ title }}{% endif %}
+        </div>
+        {% endblock %}
+        {% endif %}
         {% block pretitle %}{% endblock %}
         {% block content_title %}{% if title %}<h1>{{ title }}</h1>{% endif %}{% endblock %}
         {% block content %}
         {% block object-tools %}{% endblock %}
         {{ content }}
         {% endblock %}
-        {% block sidebar %}{% endblock %}
+
         <br class="clear" />
     </div>
     <!-- END Content -->
 
-    {% block footer %}<div id="footer"></div>{% endblock %}
+
 </div>
 <!-- END Container -->
-
+<nav class="navbar-default navbar-fixed-bottom class navbar-collapse" >
+{% block footer %}
+    <div class="text-center text-danger bg-info animated flip">
+        {{ info }}
+    </div>
+    <div class="container">
+        <p class="text-center">&nbsp;&nbsp;大型应用软件设计 copyright@2015&nbsp;halfopen</p>
+    </div>
+{% endblock %}
+</nav>
 </body>
 </html>

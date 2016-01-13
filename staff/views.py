@@ -11,10 +11,12 @@ from django.core.exceptions import ObjectDoesNotExist
 WEB_INDEX = "http://www.myooms.com:8000"
 
 
+# 首页
 def index(req):
     return render_to_response("staff/index.html", locals())
 
 
+# 显示所有桌子
 def display_booking(req):
     reservations = Reservation.objects.filter(is_valid=True).order_by('-pk').order_by("-is_valid")
     return render_to_response("staff/index.html", locals())
@@ -27,7 +29,7 @@ def show_tables(req):
     return render_to_response("staff/table.html", locals())
 
 
-#
+# 重置桌子状态
 def reset_table(req):
     if req.GET.has_key("id"):
         t_id = req.GET["id"]
@@ -172,11 +174,11 @@ def book_table(req):
         for t in former_tables:
             t.reservation.remove(reservation)
 
-        #
+        # 遍历桌子
         for i in tables:
             try:
                 t = Table.objects.get(pk=i)
-                if not t.book_table(reservation_id):
+                if not t.book_table(reservation_id): # 如果预定失败
                     return render_json(u"预约桌子"+str(t.table_no)+u"失败")
                 else:
                     try:
