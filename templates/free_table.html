@@ -9,7 +9,7 @@
 
 {% block main %}
 <div class="container">
-    <h1>空闲桌子</h1>
+    <h1 class="animated bounceInLeft">空闲桌子</h1>
     <form class="form-horizontal vertical-center" role="form">
     <div class="form-group">
       <label for="firstname" class="col-sm-1 control-label">日期</label>
@@ -21,22 +21,32 @@
     <div class="form-group">
       <label for="lastname" class="col-sm-1 control-label">时间</label>
       <div class="col-sm-6" style="width: 88%">
-            <select id="id_time" class="form-control search-time" name="time">
-            <option value="9">早上</option>
-            <option value="12">中午</option>
-            <option value="15">下午</option>
-            <option value="18">晚上</option>
-            </select>
+
+                <select id="id_time" class="form-control   search-time " name="time" >
+                <option value="9">早上</option>
+                <option value="12">中午</option>
+                <option value="15">下午</option>
+                <option value="18">晚上</option>
+                </select>
+
+
 
       </div>
    </div>
-    <div class="text-center"><span class="btn free-tables-search">search</span></div>
+    <div class="text-center"><span class="btn free-tables-search">查询</span></div>
     </form>
 
-    <h3>所有空闲桌子列表</h3>
-    <div ><label class="label-danger count_free_num" style="color: white; border-radius: 2px; padding: 2px;">0个座位空闲</label></div>
+    <h3 class="animated bounceInLeft">所有空闲桌子列表</h3>
+    <div ><label class="animated label-danger count_free_num" style="color: white; border-radius: 2px; padding: 2px;">0个座位空闲</label></div>
     <div class="row free-tables-container">
 
     </div>
+
+    <h3 class="animated bounceInLeft">当天已有订单</h3>
+    <div ><label class="animated label-danger count_reservations_num" style="color: white; border-radius: 2px; padding: 2px;">目前没有订单</label></div>
+    <div class="row reservations-container">
+
+    </div>
+
 </div>
 {% endblock %}

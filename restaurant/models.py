@@ -6,7 +6,8 @@ from django.db import models
 # 客户
 class Customer(models.Model):
     name = models.CharField(verbose_name=u'姓名', max_length=200, null=False)
-    tel = models.IntegerField(verbose_name=u'电话', max_length=15, null=False)
+    tel = models.IntegerField(verbose_name=u'电话', max_length=15, null=False, unique=True)
+    # email = models.EmailField(verbose_name=u'邮箱')
 
     class Meta:
         verbose_name = u"客户"
@@ -72,6 +73,7 @@ class Table(models.Model):
         else:
             return u"%03d 号桌，可容纳%d人，空闲" % (self.table_no, self.size)
 
+    # 重置桌子状态
     def reset(self):
         self.is_booked = False
         self.reservation.remove()

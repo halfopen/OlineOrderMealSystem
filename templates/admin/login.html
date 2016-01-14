@@ -26,7 +26,7 @@
 {% endfor %}
 {% endif %}
 
-<div id="content-main">
+<div id="content-main text-center">
 <form action="{{ app_path }}" method="post" id="login-form">{% csrf_token %}
   <div class="form-row">
     {% if not form.this_is_the_login_form.errors %}{{ form.username.errors }}{% endif %}

@@ -20,7 +20,7 @@ img { border: 0; max-width: 100%; }
   position: absolute;
   content: " ";
   width: 3px;
-  background-color: #eee;
+  background-color: #202020;
   left: 50%;
   margin-left: -1.5px;
 }

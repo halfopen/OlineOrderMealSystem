@@ -4,7 +4,19 @@ import os
 DEBUG = True
 TEMPLATE_DEBUG = True
 
-ROOT_PATH = '/home/halfopen/code/OOMS/'
+
+
+#邮件配置
+EMAIL_HOST = 'smtp.gmail.com'                   #SMTP地址
+EMAIL_PORT = 25                                 #SMTP端口
+EMAIL_HOST_USER = 'qinxiankang@gmail.com'       #我自己的邮箱
+EMAIL_HOST_PASSWORD = 'bankaifuck'                  #我的邮箱密码
+EMAIL_SUBJECT_PREFIX = u'OOMS'            #为邮件Subject-line前缀,默认是'[django]'
+EMAIL_USE_TLS = True                             #与SMTP服务器通信时，是否启动TLS链接(安全链接)。默认是false
+#管理员站点
+SERVER_EMAIL = 'halfopen@yeah.com'            #The email address that error messages come from, such as those sent to ADMINS and MANAGERS.
+
+ROOT_PATH = 'F:/Mysites/OlineOrderMealSystem-master/'
 
 ADMINS = (
      ('订餐系统', 'http://www.myooms.com:8000'),

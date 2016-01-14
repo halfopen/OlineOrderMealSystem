@@ -22,7 +22,7 @@ def index(req):
         for i in range(1,21):
             table = Table(table_no=i, is_booked=False)
             table.save()
-
+    info = "欢迎来到首页"
     return render_to_response("index.html", locals())
 
 
@@ -34,7 +34,7 @@ def author(req):
     return render_to_response("author.html", locals())
 
 
-#
+# 导出表格
 def export_excel(req):
     try:
         wb = xlwt.Workbook(encoding='utf-8')
@@ -79,16 +79,16 @@ def export_excel(req):
         wb.save(response)
         return response
     except:
-        return False #
+        return False  # 其他错误
 
 
-#
+# 空闲桌子查询
 def free_table(req):
     tables = ""
     if req.method == "POST":
         if req.POST.has_key("date") and req.POST.has_key("time"):
             try:
-                date_str = req.POST["date"]
+                date_str = req.POST["date"]  # 接收日期
                 time = req.POST["time"]
                 dic = date_str.split("-")
                 year = dic[0]
@@ -102,10 +102,41 @@ def free_table(req):
                     else:
                         tables+=str(t.table_no)+","
                         count += t.size
-                tables+=str(count)
-                # print json.dumps(tables)
+                # 返回所有桌子的json数组
+                tables += str(count)
+                print json.dumps(tables)
                 return HttpResponse(json.dumps(tables))
             except:
                 return render_json("False")
     info = "free tables"
     return render_to_response("free_table.html", locals())
+
+
+# 空闲桌子查询
+def get_reservation(req):
+    reservations = ""
+    if req.method == "POST":
+        if req.POST.has_key("date") and req.POST.has_key("time"):
+            print 1
+            try:
+                print 2
+                date_str = req.POST["date"]  # 接收日期
+                time = req.POST["time"]
+                dic = date_str.split("-")
+                year = dic[0]
+                month = dic[1]
+                day = dic[2]
+                print year, month, day, time
+                rsv = Reservation.objects.filter(year=year, month=month, day=day, time=time, is_valid=True)
+                print rsv
+                count = 0
+                for r in rsv:
+                    count += 1
+                    reservations += str(r.pk)+","
+                reservations += str(count)
+                return HttpResponse(json.dumps(reservations))
+            except:
+                print 3
+                return render_json("False")
+    print 4
+    return render_json("False")

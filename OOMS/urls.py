@@ -24,6 +24,7 @@ urlpatterns = patterns('',
     (r'^about/', 'home.views.about'),
     (r'^author/', 'home.views.author'),
     (r'^free_table', 'home.views.free_table'),
+    (r'get_reservation', 'home.views.get_reservation'),
     (r'^export_excel/', 'home.views.export_excel'),
     (r'suggestion/$', 'suggestion.views.suggestion'),
 

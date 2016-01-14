@@ -10,7 +10,7 @@
 {% block main %}
 
 <div class="container">
-    <h1>桌子详情</h1>
+    <h1 class="animated bounceInLeft">桌子详情</h1>
     <div class="row text-center">
             <div class="col-md-6 text-center meal-list table-list">
                 <a href="table_detail?id={{ table.pk }}" >
@@ -25,7 +25,7 @@
     </div>
     <br/>
 
-    <h2>该桌已有订单</h2>
+    <h2  class="animated bounceInLeft">该桌已有订单</h2>
     <div class="row">
     {% for r in reservations %}
           <div class="row-content col-lg-2 col-sm-4 col-xs-12 text-center meal-list">
