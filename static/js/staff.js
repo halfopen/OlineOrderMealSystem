@@ -126,10 +126,14 @@ function select_table_list(){
 }
 
 function spin_color(){
-    $(".spin img").each(function(){
+    console.log("spin");
+    $(".spin img").each(function(i){
         i = parseInt(Math.random()*6)+1;
-        path = "../static/img/spin/"+i+".png";
+        path = "http://www.myooms.com:8000/static/img/spin/"+i+".png";
         $(this).attr("src", path);
+        $(this).addClass("animated");
+        $(this).addClass("fadeInDownBig");
+
         console.log($(this));
   });
 }

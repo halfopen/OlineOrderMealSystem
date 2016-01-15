@@ -5,7 +5,6 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 
 
-
 #邮件配置
 EMAIL_HOST = 'smtp.gmail.com'                   #SMTP地址
 EMAIL_PORT = 25                                 #SMTP端口
@@ -16,7 +15,7 @@ EMAIL_USE_TLS = True                             #与SMTP服务器通信时，�
 #管理员站点
 SERVER_EMAIL = 'halfopen@yeah.com'            #The email address that error messages come from, such as those sent to ADMINS and MANAGERS.
 
-ROOT_PATH = 'F:/Mysites/OlineOrderMealSystem-master/'
+ROOT_PATH = '/home/halfopen/code/OlineOrderMealSystem/'
 
 ADMINS = (
      ('订餐系统', 'http://www.myooms.com:8000'),

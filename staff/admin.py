@@ -4,6 +4,6 @@ from models import *
 from django.contrib import admin
 
 
-admin.site.register(Staff)
-admin.site.register(HeadWaiter)
-admin.site.register(ReceptionList)
+#admin.site.register(Staff)
+#admin.site.register(HeadWaiter)
+#admin.site.register(ReceptionList)

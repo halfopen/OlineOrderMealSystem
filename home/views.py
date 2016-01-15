@@ -15,6 +15,7 @@ import datetime
 import xlwt
 import json
 
+# index page
 def index(req):
     if Table.objects.filter().exists():
             pass
@@ -26,10 +27,12 @@ def index(req):
     return render_to_response("index.html", locals())
 
 
+# about
 def about(req):
     return render_to_response("about.html", locals())
 
 
+# the author blog, github address.
 def author(req):
     return render_to_response("author.html", locals())
 
@@ -104,7 +107,7 @@ def free_table(req):
                         count += t.size
                 # 返回所有桌子的json数组
                 tables += str(count)
-                print json.dumps(tables)
+                # print json.dumps(tables)
                 return HttpResponse(json.dumps(tables))
             except:
                 return render_json("False")
@@ -119,16 +122,16 @@ def get_reservation(req):
         if req.POST.has_key("date") and req.POST.has_key("time"):
             print 1
             try:
-                print 2
+                # print 2
                 date_str = req.POST["date"]  # 接收日期
                 time = req.POST["time"]
                 dic = date_str.split("-")
                 year = dic[0]
                 month = dic[1]
                 day = dic[2]
-                print year, month, day, time
+                # print year, month, day, time
                 rsv = Reservation.objects.filter(year=year, month=month, day=day, time=time, is_valid=True)
-                print rsv
+                # print rsv
                 count = 0
                 for r in rsv:
                     count += 1
@@ -136,7 +139,7 @@ def get_reservation(req):
                 reservations += str(count)
                 return HttpResponse(json.dumps(reservations))
             except:
-                print 3
+                # print 3
                 return render_json("False")
-    print 4
+    # print 4
     return render_json("False")
