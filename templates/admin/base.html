@@ -35,7 +35,7 @@
         </div>
         {% if user.is_active and user.is_staff %}
         <div id="user-tools">
-            {% trans 'Welcome,' %}餐厅的经理:
+            {% trans 'Welcome,' %}餐厅的{{ user.get_short_name }}:
             <strong>{% filter force_escape %}{% firstof user.get_short_name user.get_username %}{% endfilter %}</strong>.
             {% block userlinks %}
                 <!--{% url 'django-admindocs-docroot' as docsroot %}

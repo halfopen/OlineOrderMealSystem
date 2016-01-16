@@ -7,6 +7,7 @@ from django.shortcuts import render_to_response
 from utils import render_json
 from restaurant.models import *
 from django.core.exceptions import ObjectDoesNotExist
+from django.db import transaction
 
 WEB_INDEX = "http://www.myooms.com:8000"
 
@@ -81,6 +82,7 @@ def cancel_booking(req):
 
 
 # 添加订单
+@transaction.commit_manually
 def add_booking(req):
     if req.method == "POST":
         try:
@@ -96,24 +98,26 @@ def add_booking(req):
             time = req.REQUEST.get("time")
             try:
                 customer = Customer.objects.get(name=name, tel=tel)
-                print customer
+                # print customer
             except ObjectDoesNotExist:
                 print "create new customer\n"
                 try:
                     customer = Customer(name=name, tel=tel)
                     customer.save()
-                    print customer
+                    # print customer
                 except:
                     info = u"新建客户失败，是否手机号已经被占用？"
+                    transaction.rollback()   # 事务回退
                     return render_to_response("staff/add.html", locals())
                 info = u"新建用户"
             reservation = Reservation(customer=customer, number=number,time=time, year=year, month=month, day=day, is_valid=True)
             reservation.save()
             info = u"添加成功！"
+            transaction.commit() # 事务提交
             return HttpResponseRedirect(WEB_INDEX+"/staff")
         except:
             info = u"请输入相关信息进行预订"
-            print info
+            # print info
             return render_to_response("staff/add.html", locals())
     else:
         # print "GET"
@@ -122,6 +126,7 @@ def add_booking(req):
 
 
 # 分配桌子
+# @transaction.commit_manually
 def book_table(req):
     valid_tables = []
     invalid_tables = []
@@ -147,10 +152,11 @@ def book_table(req):
                         invalid_tables.append(t)
                 else:
                     valid_tables.append(t)
-            print reservation_id
+            # print reservation_id
 
             return render_to_response("staff/book_table.html", locals())
         except :
+
             return HttpResponseRedirect('../')
 
     # 处理Post请求
